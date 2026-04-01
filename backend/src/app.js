@@ -13,7 +13,8 @@ const app = express();
 // Enable CORS (frontend ↔ backend)
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://ai-meal-planner-mocha-nu.vercel.app"
+  "https://ai-meal-planner-mocha-nu.vercel.app",
+  "https://ai-meal-planner-39nun7vbw-anurag-agrawals-projects.vercel.app"
 ];
 
 app.use(
