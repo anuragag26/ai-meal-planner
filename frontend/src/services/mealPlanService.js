@@ -4,7 +4,7 @@ import api from "./api";
    Generate Meal Plan
 ========================= */
 export const generateMealPlan = async (prefs) => {
-  const res = await api.post("/mealplan/generate", prefs);
+  const res = await api.post("/api/mealplan/generate", prefs);
   return res.data.data;
 };
 
@@ -12,7 +12,7 @@ export const generateMealPlan = async (prefs) => {
    Swap Meal
 ========================= */
 export const swapMeal = async (payload) => {
-  const res = await api.post("/mealplan/swap", payload);
+  const res = await api.post("/api/mealplan/swap", payload);
   return res.data.data;
 };
 
@@ -20,7 +20,7 @@ export const swapMeal = async (payload) => {
    GET MEAL HISTORY
 ========================= */
 export const getMealHistory = async () => {
-  const res = await api.get("/mealplan/history");
+  const res = await api.get("/api/mealplan/history");
   return res.data.data;
 };
 
@@ -28,5 +28,5 @@ export const getMealHistory = async () => {
    DELETE MEAL PLAN
 ========================= */
 export const deleteMealPlan = async (id) => {
-  await api.delete(`/mealplan/${id}`);
+  await api.delete(`/api/mealplan/${id}`);
 };
