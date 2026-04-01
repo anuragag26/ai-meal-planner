@@ -11,9 +11,20 @@ const app = express();
 ========================= */
 
 // Enable CORS (frontend ↔ backend)
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ai-meal-planner-mocha-nu.vercel.app"
+];
+
 app.use(
   cors({
-    origin: "https://ai-meal-planner-mocha-nu.vercel.app/", // Vite frontend
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS not allowed"));
+      }
+    },
     credentials: true,
   })
 );
