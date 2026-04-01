@@ -13,7 +13,7 @@ const app = express();
 // Enable CORS (frontend ↔ backend)
 app.use(
   cors({
-    origin: "http://localhost:5173", // Vite frontend
+    origin: "https://ai-meal-planner-mocha-nu.vercel.app/", // Vite frontend
     credentials: true,
   })
 );
